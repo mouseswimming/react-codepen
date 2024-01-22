@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.editor-container {
+  @apply flex-1 border border-slate-400 text-white grid grid-rows-[auto_1fr] bg-[#1e1e1e] gap-y-2 relative;
+}
+
+.editor-container.collapsed {
+  @apply flex-grow-0 grid-rows-1 gap-y-0;
+}
+
+.editor-container.collapsed .monaco-editor {
+  @apply hidden;
+}
+
+.editor-title {
+  @apply flex gap-x-2 justify-between bg-slate-700 py-2 px-4 items-center;
+}
+
+.editor-container.collapsed .editor-title {
+  @apply h-auto w-8 justify-center;
+}
+
+.editor-container.collapsed .title {
+  @apply -rotate-90 pt-1;
+}
+
+.monaco-editor {
+  position: absolute !important;
+}
